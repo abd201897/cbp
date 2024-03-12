@@ -6,7 +6,7 @@ from . import views
 app_name = 'itreporting' 
 
 def home(request):
-    return HttpResponse('IT service App - Home')
-
+    # return HttpResponse('IT service App - Home')
+    return render(request, 'itreporting/home.html', {'title': 'Welcome'})
 def about(request):
-    return render(request, 'itreporting/home.html')
+    return render(request, 'itreporting/home.html', {'title': 'Welcome'})
