@@ -1,7 +1,11 @@
 {% extends "itreporting/base.html" %}
 
 {% block content %}
-    <h1>Welcome to Student IT Services</h1>
+    {% if user.is_authenticated  %} 
+        <h2>Welcome {{ user.first_name }}  to Student IT Services Homepage</h2>
+    {% else %}     
+         <h1>Welcome to Student IT Services Homepage</h1>
+    {% endif %}
 {% endblock %}
 
 
