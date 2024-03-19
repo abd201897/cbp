@@ -29,6 +29,7 @@
                           <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
                           <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
                           <a class="nav-item nav-link" href="#">Report</a>
+                          <a class="nav-item nav-link" href="{% url 'itreporting:report' %}">View Reported Issues</a>
                       </div>
                       <!-- Navbar Right Side -->
                       <div class="navbar-nav"> 
@@ -44,7 +45,6 @@
                             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a> 
                     
                             <a class="nav-item nav-link" href="{% url 'register' %}">Register</a> 
-                    
                         {% endif %} 
                   </div>
               </div>
