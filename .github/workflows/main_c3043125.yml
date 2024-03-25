@@ -48,4 +48,4 @@ jobs:
         app-name: 'c3043125'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_188b119ed39d4ea999e955a44cf220d6 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_05033fd06cf5470988d6c01044320386 }}/abdullah201897/cbp-task2:${{ github.sha }}'
+        images: 'index.docker.io/abdullah201897/cbp-task2:${{ github.sha }}'
