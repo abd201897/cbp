@@ -16,8 +16,19 @@ RUN pip install --upgrade pip
 
 RUN pip3 install -r requirements.txt
 
+
+COPY entrypoint.sh ./
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends dialog \
+    && apt-get install -y --no-install-recommends openssh-server \
+    && echo "root:Docker!" | chpasswd \
+    && chmod u+x ./entrypoint.sh
+COPY sshd_config /etc/ssh/
+
 # Expose the port Django runs on
-EXPOSE 80
+EXPOSE 80 2222
 
 # Run Django application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+#CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+ENTRYPOINT [ "./entrypoint.sh" ] 
+
